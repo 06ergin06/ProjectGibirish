@@ -21,18 +21,25 @@ public class Main {
         }
         int[] binaryArr = new int[arrIndex];
         int arrayIndexB = 0;
-        for (int i = 0; i < arrIndex; i++) {
-            if (array[i].equals("ZERO")) {
-                binaryArr[arrayIndexB] = 0;
-                arrayIndexB++;
-            } else if (array[i].equals("ONE")) {
-                binaryArr[arrayIndexB] = 1;
-                arrayIndexB++;
+        int i = arrIndex;
+        int j = 0;
+        int kat = 1;
+        while (i > 0) {
+            while (j < (8 * kat)) {
+                if (array[j].equals("ZERO")) {
+                    binaryArr[arrayIndexB] = 0;
+                    arrayIndexB++;
+                } else if (array[j].equals("ONE")) {
+                    binaryArr[arrayIndexB] = 1;
+                    arrayIndexB++;
+                }
+                j++;
             }
+            kat++;
+            int decimal = toDecimal(binaryArr);
+            System.out.println(decimal);
+            i = i - 8;
         }
-        int decimal = toDecimal(binaryArr);
-        System.out.println(decimal);
-        scan.close();
     }
 
     public static String[] addArrayZero(int startZero, int end, String input) {
@@ -46,13 +53,13 @@ public class Main {
         arr2[0] = input.substring(startOne, end);
         return arr2;
     }
-    public static int toDecimal(int[] binaryArr){
+
+    public static int toDecimal(int[] binaryArr) {
         String binary = "";
-        for (int arr:binaryArr){
-            binary += arr;
+        for (int i = 0; i < 8; i++){
+            binary += binaryArr[i];
         }
-        int decimal=Integer.parseInt(binary,2);
+        int decimal = Integer.parseInt(binary, 2);
         return decimal;
     }
-
 }
