@@ -36,10 +36,12 @@ public class Main {
                 j++;
             }
             int decimal = toDecimal(binaryArr,kat);
-            System.out.println(decimal);
+            char ascii = (char) decimal;
+            System.out.print(ascii);
             kat++;
             i = i - 8;
         }
+
     }
 
     public static String[] addArrayZero(int startZero, int end, String input) {
