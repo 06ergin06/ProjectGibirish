@@ -30,7 +30,8 @@ public class Main {
                 arrayIndexB++;
             }
         }
-
+        int decimal = toDecimal(binaryArr);
+        System.out.println(decimal);
         scan.close();
     }
 
@@ -45,6 +46,13 @@ public class Main {
         arr2[0] = input.substring(startOne, end);
         return arr2;
     }
-
+    public static int toDecimal(int[] binaryArr){
+        String binary = "";
+        for (int arr:binaryArr){
+            binary += arr;
+        }
+        int decimal=Integer.parseInt(binary,2);
+        return decimal;
+    }
 
 }
