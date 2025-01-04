@@ -4,7 +4,6 @@ public class Main {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         String input = scan.nextLine();
-        input = input.replace(" ", "");
         String[] array = new String[input.length()];
         int arrIndex = 0;
         for (int i = 0; i < (input.length() - 1); i++) {
@@ -21,7 +20,7 @@ public class Main {
         }
         int[] binaryArr = new int[arrIndex];
         int arrayIndexB = 0;
-        int i = arrIndex;
+        int i = arrIndex - 1;
         int j = 0;
         int kat = 1;
         while (i > 0) {
