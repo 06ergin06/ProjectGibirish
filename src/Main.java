@@ -34,7 +34,7 @@ public class Main {
                 }
                 j++;
             }
-            int decimal = toDecimal(binaryArr,kat);
+            int decimal = toDecimal(binaryArr, kat);
             char ascii = (char) decimal;
             System.out.print(ascii);
             kat++;
@@ -55,13 +55,13 @@ public class Main {
         return arr2;
     }
 
-    public static int toDecimal(int[] binaryArr,int kat) {
+    public static int toDecimal(int[] binaryArr, int kat) {
         String binary = "";
         int i = 0;
-        while ((8*kat) - i != 8){
+        while ((8 * kat) - i != 8) {
             i = i + 8;
         }
-        while(i < (8 * kat)){
+        while (i < (8 * kat)) {
             binary += binaryArr[i];
             i++;
         }
