@@ -6,8 +6,6 @@ public class Main {
         String input = scan.nextLine();
         input = input.replace(" ", "");
         String[] array = new String[input.length()];
-        // boolean haveZ = input.contains("ZERO");
-        // boolean haveO = input.contains("ONE");
         int arrIndex = 0;
         for (int i = 0; i < (input.length() - 1); i++) {
             int startZero = input.indexOf("ZERO", i);
@@ -21,12 +19,19 @@ public class Main {
                 arrIndex++;
             }
         }
-        for (String arr : array) {
-            if (arr != null) {
-                System.out.println(arr);
+        int[] binaryArr = new int[arrIndex];
+        int arrayIndexB = 0;
+        for (int i = 0; i < arrIndex; i++) {
+            if (array[i].equals("ZERO")) {
+                binaryArr[arrayIndexB] = 0;
+                arrayIndexB++;
+            } else if (array[i].equals("ONE")) {
+                binaryArr[arrayIndexB] = 1;
+                arrayIndexB++;
             }
         }
 
+        scan.close();
     }
 
     public static String[] addArrayZero(int startZero, int end, String input) {
@@ -40,4 +45,6 @@ public class Main {
         arr2[0] = input.substring(startOne, end);
         return arr2;
     }
+
+
 }
