@@ -35,9 +35,9 @@ public class Main {
                 }
                 j++;
             }
-            kat++;
-            int decimal = toDecimal(binaryArr);
+            int decimal = toDecimal(binaryArr,kat);
             System.out.println(decimal);
+            kat++;
             i = i - 8;
         }
     }
@@ -54,10 +54,15 @@ public class Main {
         return arr2;
     }
 
-    public static int toDecimal(int[] binaryArr) {
+    public static int toDecimal(int[] binaryArr,int kat) {
         String binary = "";
-        for (int i = 0; i < 8; i++){
+        int i = 0;
+        while ((8*kat) - i != 8){
+            i = i + 8;
+        }
+        while(i < (8 * kat)){
             binary += binaryArr[i];
+            i++;
         }
         int decimal = Integer.parseInt(binary, 2);
         return decimal;
