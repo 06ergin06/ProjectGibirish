@@ -39,7 +39,6 @@ public class Main {
             i = i - 8;
             System.out.print(ascii);
         }
-
     }
 
     public static String[] addArray(int start, int end, String input) {
