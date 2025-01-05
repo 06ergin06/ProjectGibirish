@@ -10,11 +10,11 @@ public class Main {
             int startZero = input.indexOf("ZERO", i);
             int startOne = input.indexOf("ONE", i);
             if (startZero == i) {
-                System.arraycopy(addArrayZero(startZero, (startZero + 4), input), 0, array, arrIndex, 1);
+                System.arraycopy(addArray(startZero, (startZero + 4), input), 0, array, arrIndex, 1);
                 arrIndex++;
             }
             if (startOne == i) {
-                System.arraycopy(addArrayOne(startOne, (startOne + 3), input), 0, array, arrIndex, 1);
+                System.arraycopy(addArray(startOne, (startOne + 3), input), 0, array, arrIndex, 1);
                 arrIndex++;
             }
         }
@@ -34,8 +34,7 @@ public class Main {
                 }
                 j++;
             }
-            int decimal = toDecimal(binaryArr, kat);
-            char ascii = (char) decimal;
+            char ascii = (char) toDecimal(binaryArr, kat);
             System.out.print(ascii);
             kat++;
             i = i - 8;
@@ -43,15 +42,9 @@ public class Main {
 
     }
 
-    public static String[] addArrayZero(int startZero, int end, String input) {
+    public static String[] addArray(int start, int end, String input) {
         String[] arr2 = new String[1];
-        arr2[0] = input.substring(startZero, end);
-        return arr2;
-    }
-
-    public static String[] addArrayOne(int startOne, int end, String input) {
-        String[] arr2 = new String[1];
-        arr2[0] = input.substring(startOne, end);
+        arr2[0] = input.substring(start, end);
         return arr2;
     }
 
@@ -65,7 +58,6 @@ public class Main {
             binary += binaryArr[i];
             i++;
         }
-        int decimal = Integer.parseInt(binary, 2);
-        return decimal;
+        return Integer.parseInt(binary, 2);
     }
 }
