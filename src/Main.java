@@ -49,7 +49,7 @@ public class Main {
 
     public static int toDecimal(int[] binaryArr, int kat) {
         String binary = "";
-        int i = 0;
+        int i;
         i = (kat * 8) - 8;
         while (i < (8 * kat)) {
             binary += binaryArr[i];
