@@ -38,7 +38,33 @@ public class Main {
             char ascii = (char) toDecimal(binaryArr, kat);
             kat++;
             i = i - 8;
-            printCharacter(ascii);
+            switch (ascii) {
+                case '4':
+                    System.out.print('A');
+                    break;
+                case '8':
+                    System.out.print('B');
+                    break;
+                case '6':
+                case '9':
+                    System.out.print('G');
+                    break;
+                case '1':
+                    System.out.print('I');
+                    break;
+                case '0':
+                    System.out.print('O');
+                    break;
+                case '2':
+                    System.out.print('Z');
+                    break;
+                case '3':
+                    System.out.print('E');
+                    break;
+                default:
+                    System.out.print(ascii);
+                    break;
+            }
         }
     }
 
@@ -57,34 +83,5 @@ public class Main {
             i++;
         }
         return Integer.parseInt(binary, 2);
-    }
-    private static void printCharacter(char ascii) {
-        switch (ascii) {
-            case '4':
-                System.out.print('A');
-                break;
-            case '8':
-                System.out.print('B');
-                break;
-            case '6':
-            case '9':
-                System.out.print('G');
-                break;
-            case '1':
-                System.out.print('I');
-                break;
-            case '0':
-                System.out.print('O');
-                break;
-            case '2':
-                System.out.print('Z');
-                break;
-            case '3':
-                System.out.print('E');
-                break;
-            default:
-                System.out.print(ascii);
-                break;
-        }
     }
 }
