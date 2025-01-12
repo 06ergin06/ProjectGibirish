@@ -4,6 +4,7 @@ public class Main {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         String input = scan.nextLine();
+        scan.close();
         String[] array = new String[input.length()];
         int arrIndex = 0;
         for (int i = 0; i < (input.length() - 1); i++) {
@@ -37,7 +38,33 @@ public class Main {
             char ascii = (char) toDecimal(binaryArr, kat);
             kat++;
             i = i - 8;
-            System.out.print(ascii);
+            switch (ascii){
+                case ('4'):
+                    System.out.print('A');
+                    break;
+                case ('8'):
+                    System.out.print('B');
+                    break;
+                case ('6'):
+                case('9'):
+                    System.out.print('G');
+                    break;
+                case('1'):
+                    System.out.print('I');
+                    break;
+                case('0'):
+                    System.out.print('O');
+                    break;
+                case('2'):
+                    System.out.print('Z');
+                    break;
+                case('3'):
+                    System.out.print('E');
+                    break;
+                default:
+                    System.out.print(ascii);
+                    break;
+            }
         }
     }
 
