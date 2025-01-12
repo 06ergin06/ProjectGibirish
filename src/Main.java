@@ -5,19 +5,25 @@ public class Main {
         Scanner scan = new Scanner(System.in);
         String input = scan.nextLine();
         scan.close();
-        String[] array = new String[input.length() / 3];
+        String[] array = new String[(input.length() / 3)];
         int arrIndex = 0;
         for (int i = 0; i < (input.length() - 1); i++) {
             int startZero = input.indexOf("ZERO", i);
             int startOne = input.indexOf("ONE", i);
             if (startZero == i) {
                 System.arraycopy(addArray(startZero, (startZero + 4), input), 0, array, arrIndex, 1);
+                i = startZero + 4;
                 arrIndex++;
             }
             if (startOne == i) {
                 System.arraycopy(addArray(startOne, (startOne + 3), input), 0, array, arrIndex, 1);
+                i = startOne + 3;
                 arrIndex++;
             }
+        }
+        int a = 0;
+        while (a < input.length()-1) {
+            
         }
         int[] binaryArr = new int[arrIndex];
         int arrayIndexB = 0;
