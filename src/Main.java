@@ -5,7 +5,7 @@ public class Main {
         Scanner scan = new Scanner(System.in);
         String input = scan.nextLine();
         scan.close();
-        String[] array = new String[input.length()];
+        String[] array = new String[input.length() / 3];
         int arrIndex = 0;
         for (int i = 0; i < (input.length() - 1); i++) {
             int startZero = input.indexOf("ZERO", i);
