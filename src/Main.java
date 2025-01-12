@@ -21,10 +21,6 @@ public class Main {
                 arrIndex++;
             }
         }
-        int a = 0;
-        while (a < input.length()-1) {
-            
-        }
         int[] binaryArr = new int[arrIndex];
         int arrayIndexB = 0;
         int i = arrIndex - 1;
